@@ -3,8 +3,9 @@ $URL = "https://data.gov.bh/api/explore/v2.1/catalog/datasets/01-statistics-of-s
 $data = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $response = file_get_contents($URL);
-    $data = json_decode($response, true); // decode into an associative array
+    $raw_response = file_get_contents($URL);
+    $response = json_decode($raw_response, true); // decode into an associative array
+    $data = $response['results'];
 }
 ?>
 
@@ -19,7 +20,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 </head>
 
 <body>
-    
+    <table>
+        <thead>
+            <th>Year</th>
+            <th>Semester</th>
+            <th>The Programs</th>
+            <th>Nationality</th>
+            <th>Colleges</th>
+            <th>No. Of Students</th>
+        </thead>
+        <tbody>
+            <?php foreach ($data as $item) {
+                $year = $item['year'];
+                $semester = $item['semester'];
+                $the_programs = $item['the_programs'];
+                $nationality = $item['nationality'];
+                $colleges = $item['colleges'];
+                $number_of_students = $item['number_of_students'];
+
+                echo "<tr>";
+                echo "<td>$year</td>";
+                echo "<td>$semester</td>";
+                echo "<td>$the_programs</td>";
+                echo "<td>$nationality</td>";
+                echo "<td>$colleges</td>";
+                echo "<td>$number_of_students</td>";
+                echo "</tr>";
+            } ?>
+        </tbody>
+    </table>
 </body>
 
 </html>
