@@ -16,39 +16,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>333 Assignment 2</title>
 </head>
 
 <body>
-    <table>
-        <thead>
-            <th>Year</th>
-            <th>Semester</th>
-            <th>The Programs</th>
-            <th>Nationality</th>
-            <th>Colleges</th>
-            <th>No. Of Students</th>
-        </thead>
-        <tbody>
-            <?php foreach ($data as $item) {
-                $year = $item['year'];
-                $semester = $item['semester'];
-                $the_programs = $item['the_programs'];
-                $nationality = $item['nationality'];
-                $colleges = $item['colleges'];
-                $number_of_students = $item['number_of_students'];
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <th>Year</th>
+                <th>Semester</th>
+                <th>The Programs</th>
+                <th>Nationality</th>
+                <th>Colleges</th>
+                <th>No. Of Students</th>
+            </thead>
+            <tbody>
+                <?php foreach ($data as $item) {
+                    $year = $item['year'];
+                    $semester = $item['semester'];
+                    $the_programs = $item['the_programs'];
+                    $nationality = $item['nationality'];
+                    $colleges = $item['colleges'];
+                    $number_of_students = $item['number_of_students'];
 
-                echo "<tr>";
-                echo "<td>$year</td>";
-                echo "<td>$semester</td>";
-                echo "<td>$the_programs</td>";
-                echo "<td>$nationality</td>";
-                echo "<td>$colleges</td>";
-                echo "<td>$number_of_students</td>";
-                echo "</tr>";
-            } ?>
-        </tbody>
-    </table>
+                    echo "<tr>";
+                    echo "<td>$year</td>";
+                    echo "<td>$semester</td>";
+                    echo "<td>$the_programs</td>";
+                    echo "<td>$nationality</td>";
+                    echo "<td>$colleges</td>";
+                    echo "<td>$number_of_students</td>";
+                    echo "</tr>";
+                } ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>
