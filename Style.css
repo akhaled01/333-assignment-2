@@ -1,5 +1,5 @@
 <style>
-  /* Make the table responsive */
+  /* table responsive */
   .table-wrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -13,7 +13,7 @@
   }
 
   th, td {
-    padding: 0.5em;
+    padding: 0.5 pex ;
     text-align: left;
   }
 
@@ -21,8 +21,4 @@
     background-color: #f4f4f4;
   }
 
-  /* Optional: Add striped rows */
-  tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
-  }
 </style>
