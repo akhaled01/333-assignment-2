@@ -17,40 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>333 Assignment 2</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- The following will modify tailwind behaviour at runtime to ensure responsiveness on mobile view-->
-    <style>
-        @media screen and (max-width: 600px) {
-            .max-h-\[400px\] {
-                @apply border-none;
-            }
-
-            table,
-            thead,
-            tbody,
-            th,
-            td,
-            tr {
-                @apply block;
-            }
-
-            thead tr {
-                @apply absolute -top-[9999px] -left-[9999px];
-            }
-
-            tr {
-                @apply border border-gray-300 mb-2.5;
-            }
-
-            td {
-                @apply border-none relative pl-[50%];
-            }
-
-            td:before {
-                @apply absolute top-1.5 left-1.5 w-[45%] pr-2.5 whitespace-nowrap font-bold;
-                content: attr(data-label);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="font-['Segoe_UI',Tahoma,Geneva,Verdana,sans-serif]">

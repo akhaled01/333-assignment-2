@@ -1,0 +1,33 @@
+/** The following will modify tailwind behaviour at runtime to ensure responsiveness on mobile view **/
+
+@media screen and (max-width: 600px) {
+  .max-h-\[400px\] {
+    @apply border-none;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    @apply block;
+  }
+
+  thead tr {
+    @apply absolute -top-[9999px] -left-[9999px];
+  }
+
+  tr {
+    @apply border border-gray-300 mb-2.5;
+  }
+
+  td {
+    @apply border-none relative pl-[50%];
+  }
+
+  td:before {
+    @apply absolute top-1.5 left-1.5 w-[45%] pr-2.5 whitespace-nowrap font-bold;
+    content: attr(data-label);
+  }
+}
